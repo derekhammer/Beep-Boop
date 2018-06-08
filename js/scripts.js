@@ -11,7 +11,10 @@ $(document).ready(function()
 
     for (i = 0; i < resultLength; i++){
 
-      if ((result[i] / 3) %1 === 0){
+      if (result[i] === 0){
+        finalResult.push(" BEEP ");
+      }
+      else if ((result[i] / 3) %1 === 0){
         finalResult.push(" I'm sorry, Dave. I'm afraid I can't do that. ");
       }
       else if (result[i].toString().match(1)){
@@ -20,14 +23,16 @@ $(document).ready(function()
       else if (result[i].toString().match(0)){
         finalResult.push(" BEEP ");
       }
-
       else{
         finalResult.push(result[i]);
       }
 
-}
+
 var finalString = finalResult.join("");
-alert(finalString);
+$("#output").text(finalString);
+}
+
+
   });
 
   });
